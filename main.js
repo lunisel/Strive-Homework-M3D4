@@ -13,12 +13,25 @@ const getBooks = function() {
                             <div class="img-container d-flex" style="height: 20rem;">
                                 <img src="${book.img}" class="img-fluid" style="object-fit: cover">
                             </div>
-                            <p>Title : ${book.title}</p>
-                            <button>Add to cart</button>
+                            <p class="mx-4 text-center">Title : ${book.title}</p>
+                            <button class="add-to-cart">Add to cart</button>
                          </div>`
         row.appendChild(col)
+        const btnsAddToCart = document.querySelectorAll(".add-to-cart")
+        for(let i=0; i< btnsAddToCart.length; i++){
+          btnsAddToCart[i].addEventListener("click", function(event){
+            console.log(event.target.closest(".card"))
+          })
+        }
       })
     })
 }
 
 getBooks()
+
+
+window.onload = () => {
+  
+  
+
+}
